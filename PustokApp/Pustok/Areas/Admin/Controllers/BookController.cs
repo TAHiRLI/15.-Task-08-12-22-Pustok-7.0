@@ -42,6 +42,7 @@ namespace Pustok.Areas.Admin.Controllers
         {
             ViewBag.Genres = _context.Genres.ToList();
             ViewBag.Authors = _context.Authors.ToList();
+            ViewBag.Tags = _context.Tags.ToList();
             return View();
         }
         [HttpPost]
@@ -54,6 +55,7 @@ namespace Pustok.Areas.Admin.Controllers
 
             if (!ModelState.IsValid)
             {
+                ViewBag.Tags = _context.Tags.ToList();
                 ViewBag.Genres = _context.Genres.ToList();
                 ViewBag.Authors = _context.Authors.ToList();
                 return View();
@@ -87,6 +89,20 @@ namespace Pustok.Areas.Admin.Controllers
                 }
             }
 
+            foreach (var tagId in book.TagIds)
+            {
+                if (!_context.Tags.Any(x=> x.Id == tagId))
+                {
+                    return RedirectToAction("Error", "Dashboard");
+                }
+                BookTag bookTag = new BookTag
+                {
+                    TagId = tagId
+                };
+                book.BookTags.Add(bookTag);
+            }
+
+
             book.CreatedAt = DateTime.UtcNow.AddHours(4);
             book.ModifiedAt = DateTime.UtcNow.AddHours(4);
 
@@ -97,26 +113,29 @@ namespace Pustok.Areas.Admin.Controllers
         }
         public IActionResult Edit(int id)
         {
-            var model = _context.Books.Include(x => x.Author).Include(x => x.BookImages).Include(x => x.Genre).FirstOrDefault(x => x.Id == id);
+            var book = _context.Books.Include(x=> x.BookTags).Include(x => x.Author).Include(x => x.BookImages).Include(x => x.Genre).FirstOrDefault(x => x.Id == id);
             ViewBag.Genres = _context.Genres.ToList();
             ViewBag.Authors = _context.Authors.ToList();
-            return View(model);
+            ViewBag.Tags = _context.Tags.ToList();
+
+            book.TagIds = book.BookTags.Select(x => x.TagId).ToList();
+
+            return View(book);
         }
         [HttpPost]
         public IActionResult Edit(Book book)
         {
-            var existBook = _context.Books.Include(x => x.Author).Include(x => x.BookImages).Include(x => x.Genre).FirstOrDefault(x => x.Id == book.Id);
+            var existBook = _context.Books.Include(x=> x.BookTags).Include(x => x.Author).Include(x => x.BookImages).Include(x => x.Genre).FirstOrDefault(x => x.Id == book.Id);
             if (existBook == null)
                 return RedirectToAction("Error", "DashBoard");
 
             if (!ModelState.IsValid)
             {
+                ViewBag.Tags = _context.Tags.ToList();
                 ViewBag.Genres = _context.Genres.ToList();
                 ViewBag.Authors = _context.Authors.ToList();
                 return View(existBook);
             }
-
-
 
             if (book.PosterImg != null)
             {
@@ -128,7 +147,6 @@ namespace Pustok.Areas.Admin.Controllers
                 }
                 else
                     return RedirectToAction("Error", "Dashboard");
-
             }
 
             if (book.HoverImg != null)
@@ -141,7 +159,6 @@ namespace Pustok.Areas.Admin.Controllers
                 }
                 else
                     return RedirectToAction("Error", "Dashboard");
-
             }
 
             if (book.ImageFiles != null)
@@ -165,8 +182,22 @@ namespace Pustok.Areas.Admin.Controllers
             existBook.BookImages.RemoveAll(x => removedBkImgs.Contains(x));
 
 
+            // bookTags 
+            existBook.BookTags.RemoveAll(x => !book.TagIds.Contains(x.TagId));
+            foreach (var tagId in book.TagIds.Where(x=> !existBook.BookTags.Any(bt=> bt.TagId ==x)))
+            {
+                if (!_context.Tags.Any(x => x.Id == tagId))
+                {
+                    return RedirectToAction("Error", "Dashboard");
+                }
+                BookTag bookTag = new BookTag
+                {
+                    TagId = tagId
+                };
+                existBook.BookTags.Add(bookTag);
+            }
 
-            existBook.GenreId = book.GenreId;
+                existBook.GenreId = book.GenreId;
             existBook.AuthorId = book.AuthorId;
             existBook.Name = book.Name;
             existBook.SalePrice = book.SalePrice;

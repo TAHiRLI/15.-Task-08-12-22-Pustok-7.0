@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NzCgsiOyoi1h2oeOkfa9X+zjCR8ns0BRrEpNdsavIZ8=",
+  "Hash": "gzQjfK0qzFjM/HJAvi/iHeuUoGNpg56bfQBn7vuYNiY=",
   "Source": "Pustok",
   "BasePath": "_content/Pustok",
   "Mode": "Default",
@@ -1581,6 +1581,23 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Books\\4b053ef8-26b6-418e-835e-d5ca291751e4shop-8-img.jpg"
     },
     {
+      "Identity": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\15. Task 08-12-22 Pustok v7\\PustokApp\\Pustok\\wwwroot\\Uploads\\Books\\714c73a6-b717-4904-95eb-9ef519623915h6-img-6.jpg",
+      "SourceId": "Pustok",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\15. Task 08-12-22 Pustok v7\\PustokApp\\Pustok\\wwwroot\\",
+      "BasePath": "_content/Pustok",
+      "RelativePath": "Uploads/Books/714c73a6-b717-4904-95eb-9ef519623915h6-img-6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Books\\714c73a6-b717-4904-95eb-9ef519623915h6-img-6.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\15. Task 08-12-22 Pustok v7\\PustokApp\\Pustok\\wwwroot\\Uploads\\Books\\80e5d555-7c1b-4013-b417-e2d837120ca6shop-1-img.jpg",
       "SourceId": "Pustok",
       "SourceType": "Discovered",
@@ -1613,6 +1630,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Books\\893cc6ee-383b-4657-9079-957595f31cb9h6-img-9.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\15. Task 08-12-22 Pustok v7\\PustokApp\\Pustok\\wwwroot\\Uploads\\Books\\97505524-c92a-403f-8147-b252aa500f87h6-img-9.jpg",
+      "SourceId": "Pustok",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\15. Task 08-12-22 Pustok v7\\PustokApp\\Pustok\\wwwroot\\",
+      "BasePath": "_content/Pustok",
+      "RelativePath": "Uploads/Books/97505524-c92a-403f-8147-b252aa500f87h6-img-9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Books\\97505524-c92a-403f-8147-b252aa500f87h6-img-9.jpg"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\15. Task 08-12-22 Pustok v7\\PustokApp\\Pustok\\wwwroot\\Uploads\\Books\\a6bac44b-850a-4314-bf03-bef5cf86c792h3-team-img-2.png",
@@ -1766,23 +1800,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Books\\dbeb910e-8e4e-434e-8a7f-065efcd5fbe6shop-10-img.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\15. Task 08-12-22 Pustok v7\\PustokApp\\Pustok\\wwwroot\\Uploads\\Books\\ea6813d9-d131-4baa-bd81-60247400f813h6-img-9.jpg",
-      "SourceId": "Pustok",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\15. Task 08-12-22 Pustok v7\\PustokApp\\Pustok\\wwwroot\\",
-      "BasePath": "_content/Pustok",
-      "RelativePath": "Uploads/Books/ea6813d9-d131-4baa-bd81-60247400f813h6-img-9.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\Books\\ea6813d9-d131-4baa-bd81-60247400f813h6-img-9.jpg"
     },
     {
       "Identity": "C:\\Users\\Hp\\Desktop\\CodeAcadem\\BackEnd\\Tasks\\15. Task 08-12-22 Pustok v7\\PustokApp\\Pustok\\wwwroot\\Uploads\\Books\\f140152e-1e9f-4a09-9cb0-b498fb47affauserPhoto.png",

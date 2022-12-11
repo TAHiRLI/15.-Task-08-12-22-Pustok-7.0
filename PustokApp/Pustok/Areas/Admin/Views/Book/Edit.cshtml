@@ -28,6 +28,13 @@
                     <span asp-validation-for="GenreId" class="text-danger"></span>
 
                 </div>
+                <div class="form-group">
+                    <label asp-for="TagIds">Tags</label>
+                    <select asp-for="TagIds" class="form-control" asp-items=@(new SelectList(ViewBag.Tags, nameof(Tag.Id),nameof(Tag.Name) ))>
+                    </select>
+                    <span asp-validation-for="TagIds" class="text-danger"></span>
+
+                </div>
                 <div class="form-group col-md-8">
                     <label asp-for="Description">Description</label>
                     <textarea asp-for="Description" class="form-control my-2"></textarea>
@@ -64,20 +71,21 @@
                     <input asp-for="IsNew" class=" my-2">
                     <span asp-validation-for="IsNew" class="text-danger"></span> <br />
                 </div>
-                <div class="form-group  col-md-8">
+                <div class="form-group  col-md-8" >
                     <label asp-for="PosterImg">PosterImg</label>
-                    <input asp-for="PosterImg" class=" my-2">
+                    <input asp-for="PosterImg" id="PosterImg" class=" my-2">
                     <span asp-validation-for="PosterImg" class="text-danger"></span> <br />
                     <img src="~/Uploads/Books/@Model.BookImages.FirstOrDefault(x=>x.PosterStatus ==true)?.Image" width="250" />
+                    <div  id="posterImages"></div>
 
                 </div>
-                <div class="form-group ">
-                    <label asp-for="HoverImg">HoverImg</label>
-                    <input asp-for="HoverImg" class=" my-2">
+                <div class="form-group">
+                    <label asp-for="HoverImg" >HoverImg</label>
+                    <input asp-for="HoverImg" id="HoverImg" class=" my-2">
                     <span asp-validation-for="HoverImg" class="text-danger"></span> <br />
 
                     <img src="~/Uploads/Books/@Model.BookImages.FirstOrDefault(x=>x.PosterStatus ==false)?.Image" width="250" />
-
+                    <div id="hoverImages"></div>
 
                 </div>
                 <div class="form-group ">
@@ -85,7 +93,7 @@
                     <input asp-for="ImageFiles" class=" my-2">
                     <span asp-validation-for="ImageFiles" class="text-danger"></span> <br />
 
-                    <div class="row my-3 gap-1 ">
+                    <div class="row my-3 gap-1  " >
 
                     @foreach (var img in Model.BookImages.Where(x=>x.PosterStatus==null).ToList())
                     {

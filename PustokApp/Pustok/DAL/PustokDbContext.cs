@@ -23,6 +23,8 @@ namespace Pustok.DAL
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<HomeFeature> HomeFeatures { get; set; }
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<BookTag> BookTags { get; set; }
     }
 }
 

@@ -32,19 +32,19 @@ namespace Pustok.Models
         [AllowedFileTypes("image/jpeg","image/png")]
         [MaxFileSizeAttr(2)]
         public IFormFile? PosterImg { get; set; }
+
         [NotMapped]
         [AllowedFileTypes("image/jpeg", "image/png")]
         [MaxFileSizeAttr(2)]
-
-
         public IFormFile? HoverImg { get; set; }
         [NotMapped]
         [MaxFileSizeAttr(2)]
-
         public List<IFormFile>? ImageFiles { get; set; }
 
         [NotMapped]
         public List<int> BookImageIds { get; set; } = new List<int>();
+        [NotMapped]
+        public List<int> TagIds { get; set; } = new List<int>();
 
 
 
@@ -56,5 +56,6 @@ namespace Pustok.Models
         public List<Review> Reviews { get; set; }
         public List<OrderItem> OrderItems { get; set; }
         public List<BookImage> BookImages { get; set; } = new List<BookImage>();
+        public List<BookTag> BookTags { get; set; } = new List<BookTag>();
     }
 }
