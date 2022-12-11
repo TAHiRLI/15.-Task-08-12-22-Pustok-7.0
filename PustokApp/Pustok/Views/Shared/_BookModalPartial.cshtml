@@ -34,7 +34,12 @@
             </div>
             <div class="col-lg-7 mt--30 mt-lg--30">
                 <div class="product-details-info pl-lg--30 ">
-                    <p class="tag-block">Tags: <a href="#">Movado</a>, <a href="#">Omega</a></p>
+                     <p class="tag-block">Tags:
+                        @foreach (var bkTag in Model.BookTags)
+                        {
+                            <a href="#">@bkTag.Tag.Name, </a>
+                         }
+                    </p>
                     <h3 class="product-title">@Model.Name</h3>
                     <ul class="list-unstyled">
                         <li>Genre: <a href="#" class="list-value font-weight-bold"> @Model.Genre.Name</a></li>

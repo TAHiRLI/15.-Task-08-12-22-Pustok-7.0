@@ -76,16 +76,14 @@ namespace Pustok.Areas.manage.Controllers
         [HttpPost]
         public IActionResult Edit(Genre genre)
         {
-            if(!ModelState.IsValid)
-                  return View();
+         
             if(_context.Genres.Any(x=> x.Name == genre.Name && x.Id != genre.Id))
-            {
                 ModelState.AddModelError("Name", "This genre allready exists");
-                return View();
-            }
+            
             if(_context.Genres.FirstOrDefault(x => x.Id == genre.Id)==null)
                 return RedirectToAction("Error");
-
+            if (!ModelState.IsValid)
+                return View();
 
             _context.Genres.FirstOrDefault(x => x.Id == genre.Id).Name = genre.Name;
             _context.SaveChanges();

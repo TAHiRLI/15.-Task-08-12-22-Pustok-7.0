@@ -17,7 +17,13 @@ namespace Pustok.Controllers
         }
         public IActionResult Index(int id )
         {
-            Book Book = _context.Books.Include(x=> x.Author).Include(x=> x.BookImages).Include(x=> x.Genre).FirstOrDefault(x=> x.Id == id);
+            Book Book = _context.Books
+                .Include(x=> x.Author)
+                .Include(x=> x.BookImages)
+                .Include(x=> x.Genre)
+                .Include(x => x.BookTags)
+                .ThenInclude(x=> x.Tag)
+                .FirstOrDefault(x=> x.Id == id);
             return View(Book);
         }
     }

@@ -16,7 +16,7 @@ namespace Pustok.Controllers
         }
         public IActionResult GetBook(int id)
         {
-            Book book = _context.Books.Include(x=> x.Genre).Include(x=> x.BookImages).Include(x=> x.Author).FirstOrDefault(x=> x.Id == id);
+            Book book = _context.Books.Include(x=> x.Genre).Include(x=> x.BookImages).Include(x=> x.Author).Include(X=> X.BookTags).ThenInclude(x=> x.Tag).FirstOrDefault(x=> x.Id == id);
             return PartialView("_BookModalPartial", book );
         }
     }
